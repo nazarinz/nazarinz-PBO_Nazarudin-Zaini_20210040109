@@ -1,0 +1,17 @@
+1. - Class merupakan cetak biru atau kerangka dalam pembuatan program
+   - object adalah hasil instance atau penciptaan dari sebuah class
+
+2.  Dalam istilah lain method terbagi menjadi Setter (Mutator) dan Getter (Accessor). 
+     - Setter (Mutator)
+       Method setter (prosedur) digunakan untuk memberikan nilai ataupun untuk menampilkan nilai dari variabel, sehingga tidak memerlukan return value.
+     - Getter (Accessor)
+     Method getter (fungsi) digunakan untuk mengambil nilai dari variabel, sehingga membutuhkan return value.
+
+3.  1. Class Komputer berfungsi sebagai kerangka atau blueprint dari program yang akan dibuat
+    2. Atribut yang berisi ciri dari Class Komputer
+    3. Method Setter yang digunakan untuk memberikan nilai atau value disertai dengan parameter
+    4. Method Getter yang digunakan untuk mengambil nilai dari variabel
+    5. Method Getter yang digunakan untuk mengambil nilai dari variabel
+    6. Object merupakan hasil instance atau penciptaan dari Class
+    7. Inisialisasi value dari Object yang telah dibuat sebelumnya
+    8. Output dari object yang telah dibuat
