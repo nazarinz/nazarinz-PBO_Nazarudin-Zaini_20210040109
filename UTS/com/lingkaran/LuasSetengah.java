@@ -7,7 +7,9 @@ public class LuasSetengah {
         lingkaran = this.lingkaran;
     }
     public void hitung(){
-        this.lingkaran.hitungLuas();
-                
+        this.lingkaran.hitungLuas();           
+    }
+    public void tampilkan(){
+        this.lingkaran.tampilkanLuas();
     }
 }

@@ -1,8 +1,9 @@
 package com.lingkaran;
 
 public interface Lingkaran {
-    int panjang = 7;
-    int lebar = 12;
+    int panjang = 12, lebar = 7;
     
+
     void hitungLuas();
+    void tampilkanLuas();
 }
