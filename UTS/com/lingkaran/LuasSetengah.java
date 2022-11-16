@@ -4,7 +4,7 @@ public class LuasSetengah {
     private Lingkaran lingkaran;
     
     public LuasSetengah(Lingkaran lingkaran){
-        lingkaran = this.lingkaran;
+        this.lingkaran = lingkaran;
     }
     public void hitung(){
         this.lingkaran.hitungLuas();           

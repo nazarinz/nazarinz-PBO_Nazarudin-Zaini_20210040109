@@ -8,7 +8,7 @@ public class SetengahLingkaran implements Lingkaran{
     }
     @Override
     public void hitungLuas() {
-        hasil = (panjang/2 * lebar) * (Math.PI *(panjang/2) * (panjang/2) / 4);
+        hasil = (panjang * lebar) - (Math.PI *(panjang/2) * (panjang/2) /2);
     }
     @Override
     public void tampilkanLuas(){
