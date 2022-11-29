@@ -1,4 +1,3 @@
-package Sesi7.tugas1;
 
 public class Outer {
     int number=0;
