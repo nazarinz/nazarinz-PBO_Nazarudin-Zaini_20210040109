@@ -54,19 +54,18 @@ public class ShowData extends Connect {
 
     public void showdetail() {
         int i = 0;
+        int nim;
+        String nama;
         try {
             Class.forName(jdbc);
             con = DriverManager.getConnection(url, username, password);
             state = con.createStatement();
 
-            String query = "select * from tbl_detailkrs where nim like ? OR nama like ?";
+            String query = "select * from tbl_detailkrs where nim ? OR nama ?";
             ps = con.prepareStatement(query);
             ps.setString(1, "%" + "%");
             ps.setString(2, "%" + "%");
             rs = ps.executeQuery();
-
-            // String query = "select * from tbl_detailkrs";
-            // rs = state.executeQuery(query);
 
             while (rs.next()) {
                 i++;

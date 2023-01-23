@@ -4,30 +4,7 @@ import java.sql.DriverManager;
 public class Login extends Connect {
     Scanner sc = new Scanner(System.in);
 
-    public void regis() {
-        System.out.println("--------------------------------");
-        System.out.println("Sistem Pengambilan SKS Mahasiswa");
-        System.out.println("--------------------------------");
-        System.out.println("1. Login");
-        System.out.println("2. Daftar");
-        System.out.println("3. Keluar");
-        System.out.print("Pilih Menu : ");
-        int input = sc.nextInt();
-
-        if (input == 1) {
-            toLogin();
-        } else if (input == 2) {
-            InsertData regisMaba = new InsertData();
-            regisMaba.registMaba();
-        } else if (input == 3) {
-            System.exit(0);
-        } else {
-            System.out.println("Input tidak valid");
-        }
-    }
-
     public void toLogin() {
-
         System.out.println("--------------------------------");
         System.out.println("Silakan Login terlebih dahulu");
         System.out.println("--------------------------------");

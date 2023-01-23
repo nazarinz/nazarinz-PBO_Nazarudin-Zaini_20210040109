@@ -4,8 +4,6 @@ public class Menu extends Connect {
 
     public void menu() {
         Scanner sc = new Scanner(System.in);
-        Login login = new Login();
-
         System.out.println("--------------------------------");
         System.out.println("Sistem Pengambilan SKS Mahasiswa");
         System.out.println("--------------------------------");
@@ -21,6 +19,7 @@ public class Menu extends Connect {
 
         ShowData show = new ShowData();
         InsertData insert = new InsertData();
+        Registrasi regis = new Registrasi();
         if (input == 1) {
             show.showMatkul();
         } else if (input == 2) {
@@ -30,7 +29,7 @@ public class Menu extends Connect {
         } else if (input == 4) {
             show.showdetail();
         } else if (input == 5) {
-            login.regis();
+            regis.regis();
         } else {
             System.out.println("Input tidak valid");
         }
