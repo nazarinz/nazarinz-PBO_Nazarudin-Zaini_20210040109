@@ -14,6 +14,7 @@ public class Menu extends Connect {
         System.out.println("3. Tampilkan Data Mahasiswa");
         System.out.println("4. Tampilkan Data Transaksi SKS");
         System.out.println("5. Keluar dari menu");
+
         System.out.println("--------------------------------");
         System.out.print("Pilih Menu : ");
         int input = sc.nextInt();
