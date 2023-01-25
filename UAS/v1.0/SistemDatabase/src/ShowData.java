@@ -1,6 +1,7 @@
 import java.sql.DriverManager;
 
 public class ShowData extends Connect {
+    static int nim;
 
     // Method Menampilkan data mahasiswa yang telah mengambil sks
     public void showMhs() {
@@ -54,17 +55,15 @@ public class ShowData extends Connect {
 
     public void showdetail() {
         int i = 0;
-        int nim;
-        String nama;
+
         try {
             Class.forName(jdbc);
             con = DriverManager.getConnection(url, username, password);
             state = con.createStatement();
 
-            String query = "select * from tbl_detailkrs where nim ? OR nama ?";
+            String query = "select * from tbl_detailkrs where nim = (?)";
             ps = con.prepareStatement(query);
-            ps.setString(1, "%" + "%");
-            ps.setString(2, "%" + "%");
+            ps.setInt(1, nim);
             rs = ps.executeQuery();
 
             while (rs.next()) {

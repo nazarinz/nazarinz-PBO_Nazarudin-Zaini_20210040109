@@ -5,8 +5,10 @@ import java.util.Random;
 public class InsertData extends Connect {
     Scanner sc = new Scanner(System.in);
     Random randomkeun = new Random();
+    static int nim;
+    static String nama;
 
-    public void registMaba() {
+    public void registMhs() {
 
         int z = randomkeun.nextInt(1000);
         int nim = 20230000 + z;
@@ -74,10 +76,6 @@ public class InsertData extends Connect {
             System.out.println("--------------------------------");
             System.out.println("Form Pengambilan SKS");
             System.out.println("--------------------------------");
-            System.out.print("Masukin NIM : ");
-            int nim = sc.nextInt();
-            System.out.print("Masukin Nama : ");
-            String nama = sc.next();
             System.out.print("Masukan ID Matkul : ");
             int id_matkul = sc.nextInt();
             System.out.print("Jumlah SKS : ");

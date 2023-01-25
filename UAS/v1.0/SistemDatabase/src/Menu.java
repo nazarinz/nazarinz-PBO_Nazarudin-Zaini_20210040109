@@ -1,25 +1,31 @@
 import java.util.Scanner;
 
 public class Menu extends Connect {
+    static String nama;
+    static int nim;
 
     public void menu() {
         Scanner sc = new Scanner(System.in);
         System.out.println("--------------------------------");
         System.out.println("Sistem Pengambilan SKS Mahasiswa");
+        System.out.println("Nama : " + nama);
+        System.out.println("Nim : " + nim);
+
         System.out.println("--------------------------------");
         System.out.println("1. Tampilkan Data Matakuliah");
         System.out.println("2. Mengambil KRS");
         System.out.println("3. Tampilkan Data Mahasiswa");
         System.out.println("4. Tampilkan Data Transaksi SKS");
-        System.out.println("5. Keluar dari menu");
-
+        // System.out.println("5. Mengundurkan diri dari Kampus");
+        System.out.println("5. Logout");
         System.out.println("--------------------------------");
         System.out.print("Pilih Menu : ");
         int input = sc.nextInt();
 
         ShowData show = new ShowData();
         InsertData insert = new InsertData();
-        Registrasi regis = new Registrasi();
+        Login login = new Login();
+        // DeleteData delete = new DeleteData();
         if (input == 1) {
             show.showMatkul();
         } else if (input == 2) {
@@ -28,8 +34,12 @@ public class Menu extends Connect {
             show.showMhs();
         } else if (input == 4) {
             show.showdetail();
-        } else if (input == 5) {
-            regis.regis();
+        }
+        // else if (input == 5) {
+        // // delete.keluar();
+        // }
+        else if (input == 5) {
+            login.regis();
         } else {
             System.out.println("Input tidak valid");
         }

@@ -1,8 +1,8 @@
 
 public class App {
     public static void main(String[] args) {
-        Registrasi menunya = new Registrasi();
+        Login login = new Login();
 
-        menunya.regis();
+        login.regis();
     }
 }
