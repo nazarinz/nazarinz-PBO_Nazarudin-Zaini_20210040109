@@ -44,6 +44,8 @@ public class Login extends Connect {
         InsertData.nim = nim;
         InsertData.nama = nama;
         DeleteData.nim = nim;
+        UpdateData.nim = nim;
+
         try {
             Class.forName(jdbc);
             con = DriverManager.getConnection(url, username, password);

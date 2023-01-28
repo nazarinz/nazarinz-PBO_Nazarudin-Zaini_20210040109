@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.reflect.Executable;
 import java.sql.DriverManager;
 import java.util.Random;
 
@@ -46,7 +47,7 @@ public class InsertData extends Connect {
         }
     }
 
-    public void insertData() {
+    public void insertSks() {
         int i = 0;
         int z = randomkeun.nextInt(10000);
 
@@ -55,7 +56,9 @@ public class InsertData extends Connect {
             int smt = sc.nextInt();
             Class.forName(jdbc);
             con = DriverManager.getConnection(url, username, password);
-
+            if (!cekSmt(smt)) {
+                return;
+            }
             String querySemester = "select * from tbl_matakuliah where matkul_smt like ?";
             ps = con.prepareStatement(querySemester);
             ps.setString(1, "%" + smt + "%");
@@ -64,6 +67,7 @@ public class InsertData extends Connect {
             System.out.println("--------------------------------");
             System.out.println("Daftar Matakuliah yang bisa kamu ambil di Semester " + smt + " adalah : ");
             System.out.println("--------------------------------");
+
             while (rs.next()) {
                 i++;
                 System.out.println("No : " + i);
@@ -101,7 +105,27 @@ public class InsertData extends Connect {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
 
+    public static boolean cekSmt(int smt) {
+
+        try {
+            Class.forName(jdbc);
+            con = DriverManager.getConnection(url, username, password);
+
+            String querySemester = "select * from tbl_matakuliah where matkul_smt like ?";
+            ps = con.prepareStatement(querySemester);
+            ps.setString(1, "%" + smt + "%");
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return true;
+            }
+            System.out.println("Maaf untuk Semester " + smt + " Belum tersedia ");
+            return false;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
 }
