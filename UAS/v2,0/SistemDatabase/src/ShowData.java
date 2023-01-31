@@ -53,7 +53,7 @@ public class ShowData extends Connect {
         }
     }
 
-    public void showdetail() {
+    public static void showdetail() {
         int i = 0;
 
         try {
@@ -66,6 +66,8 @@ public class ShowData extends Connect {
             ps.setInt(1, nim);
             rs = ps.executeQuery();
 
+            int jumlah = 0;
+            int jumlahnya = 0;
             while (rs.next()) {
                 i++;
                 System.out.println("No : " + i);
@@ -75,7 +77,11 @@ public class ShowData extends Connect {
                 System.out.println("ID Matakuliah : " + rs.getInt("id_matkul"));
                 System.out.println("Jumlah SKS : " + rs.getInt("jumlah_sks"));
                 System.out.println("-------------------------------------------");
+                jumlah = rs.getInt("jumlah_sks");
+                jumlahnya += jumlah;
             }
+            System.out.println("Jumlah SKS : " + jumlahnya);
+
             Menu menu = new Menu();
             menu.menu();
         } catch (Exception ex) {

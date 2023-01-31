@@ -11,7 +11,8 @@ public class InsertData extends Connect {
     public void registMhs() {
 
         int z = randomkeun.nextInt(1000);
-        int nim = 20230000 + z;
+        System.out.print("NIM : ");
+        int nim = sc.nextInt();
         System.out.print("Nama : ");
         String nama = sc.next();
         System.out.print("Password : ");
@@ -20,7 +21,6 @@ public class InsertData extends Connect {
         try {
             Class.forName(jdbc);
             con = DriverManager.getConnection(url, username, password);
-            // state = con.createStatement();
             String query = "insert into tbl_mahasiswa values(?,?,?)";
             ps = con.prepareStatement(query);
             ps.setInt(1, nim);
